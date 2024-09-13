@@ -17,10 +17,10 @@ def get_cats_info(path):
                 cat_id, name, age = line.strip().split(',')
                 pet_dict = {'id': cat_id, 'name': name, "age": age}
                 pets_list.append(pet_dict)
-            print(pets_list)           
+            return pets_list           
     except FileNotFoundError:
-        print("File not found")
+        return "File not found"
     except Exception as e:
-        print(f"An error occured: {e}")
+        return f"An error occured: {e}"
 
-get_cats_info(path_to_pets)
+print(get_cats_info(path_to_pets))

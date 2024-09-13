@@ -14,12 +14,12 @@ def total_salary(path):
             for salary in salaries:
                 total_salary += int(salary)
             average_salary = total_salary / len(salaries) if salaries else 0
-            print(f"Загальна сума заробітної плати: {total_salary}, Середня заробітна плата: {int(average_salary)}")
+            return f"Загальна сума заробітної плати: {total_salary}, Середня заробітна плата: {int(average_salary)}"
     except FileNotFoundError:
-        print("File not found")
+        return "File not found"
     except Exception as e:
-        print(f"An error occured: {e}")
+        return f"An error occured: {e}"
         
     
         
-total_salary(path_to_salary)
+print(total_salary(path_to_salary))
